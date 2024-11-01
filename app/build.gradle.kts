@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "dev.airon.mytreasurybank"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.airon.mytreasurybank"
@@ -32,6 +32,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    viewBinding {
+        enable = true
     }
 }
 
