@@ -8,7 +8,7 @@
     tools:context=".presenter.splash.SplashFragment">
 
     <LinearLayout
-        android:background="@color/background_splash"
+        android:background="@color/color_default"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
