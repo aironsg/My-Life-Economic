@@ -24,24 +24,16 @@
         <TextView
             android:layout_marginHorizontal="20dp"
             android:layout_gravity="center"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
-            android:text="My treasury"
-            android:textColor="@color/text_color_splash"
+            android:text="Meu Tesouro Bank"
+            android:textColor="@color/text_color_default"
             android:textFontWeight="700"
             android:textSize="46sp" />
 
-        <TextView
-            android:layout_marginHorizontal="20dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
-            android:text="Bank"
-            android:textColor="@color/text_color_splash"
-            android:textFontWeight="700"
-            android:textSize="46sp" />
+
 
         <ProgressBar
             android:layout_marginTop="32dp"
@@ -49,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:indeterminateTint="@color/text_color_default"
             />
     </LinearLayout>
 
