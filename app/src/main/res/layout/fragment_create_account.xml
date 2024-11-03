@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_default"
     android:orientation="vertical"
-    tools:context=".presenter.auth.LoginFragment">
+    tools:context=".presenter.auth.login.LoginFragment">
 
 
     <TextView
@@ -17,107 +17,81 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
-        android:text="Criar Conta"
+        android:text="@string/txt_button_create_account"
         android:textColor="@color/text_color_default"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     >
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="415dp"
         android:layout_height="180dp"
+        android:contentDescription="@string/txt_description_image_create_account"
         android:src="@drawable/account_create_image" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_name"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text"
-        android:hint="Seu Nome"
-        android:outlineSpotShadowColor="@color/text_color_default"
+        style="@style/TextInputLayoutStyle"
         app:boxBackgroundMode="outline"
         app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:hintTextAppearance="@font/inter_semibold">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/color_default" />
+            style="@style/EditTextStyle"
+            android:hint="@string/hint_name"
+            android:inputType="textCapWords"
+            app:hintTextAppearance="@font/inter" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/edit_text"
-        android:hint="E-mail"
-        android:outlineSpotShadowColor="@color/text_color_default"
+        style="@style/TextInputLayoutStyle"
         app:boxBackgroundMode="outline"
         app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:hintTextAppearance="@font/inter_semibold">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/color_default" />
+            style="@style/EditTextStyle"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_password"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="10dp"
-        android:background="@drawable/edit_text"
-        android:hint="Password"
-        android:outlineSpotShadowColor="@color/color_default"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_password"
         app:boxBackgroundMode="outline"
         app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
-        >
+        app:passwordToggleTint="@color/text_color_default">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/color_default"
-            tools:layout_editor_absoluteX="3dp"
-            tools:layout_editor_absoluteY="457dp" />
+            style="@style/EditTextStyle"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_password_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text"
-        android:hint="Confirm Password"
-        android:outlineSpotShadowColor="@color/color_default"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_confirm_password"
         app:boxBackgroundMode="outline"
         app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
-        >
+        app:passwordToggleTint="@color/text_color_default">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password_confirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/color_default"
-            tools:layout_editor_absoluteX="3dp"
-            tools:layout_editor_absoluteY="457dp" />
+            style="@style/EditTextStyle"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -125,36 +99,34 @@
         android:id="@+id/btn_signUp"
         style="@style/ButtonStyleSignIn"
         android:layout_gravity="center"
-        android:text="Criar e Entrar" />
+        android:text="@string/txt_button_create_account" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:gravity="end"
-            android:layout_marginEnd="8dp"
-            android:text="Já possui uma conta?"/>
+            android:text="@string/txt_your_have_account" />
 
         <TextView
             android:id="@+id/btn_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Entrar"
-            android:textColor="@color/text_color_default"/>
+            android:text="@string/txt_button_send"
+            android:textColor="@color/text_color_default" />
 
     </LinearLayout>
 
     <ProgressBar
-        android:layout_gravity="center"
         android:id="@+id/progress_circular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:indeterminateTint="@color/text_color_default"/>
+        style="@style/ProgressCircularStyle"
+        android:layout_marginVertical="10dp" />
 
 </LinearLayout>

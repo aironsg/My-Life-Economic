@@ -1,11 +1,10 @@
-package dev.airon.mytreasurybank.presenter.auth
+package dev.airon.mytreasurybank.presenter.auth.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentLoginBinding
 
 

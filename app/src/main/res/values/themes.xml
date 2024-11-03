@@ -20,10 +20,28 @@
         <item name="android:layout_marginVertical">10dp</item>
     </style>
 
-    <style name="EditTextStyleSignIn" parent="Theme.Material3.Light.NoActionBar">
+    <style name="EditTextStyle" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@drawable/edit_text</item>
+        <item name="android:textColor">@color/color_default</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:outlineSpotShadowColor">@color/text_color_default</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
+
+    <style name="ProgressCircularStyle" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:indeterminateTint">@color/text_color_default</item>
     </style>
 </resources>
 

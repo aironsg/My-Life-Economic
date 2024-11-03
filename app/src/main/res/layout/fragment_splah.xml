@@ -1,53 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presenter.splash.SplashFragment">
 
     <LinearLayout
-        android:background="@color/color_default"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/color_default"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/logo_app"
-            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@mipmap/logo_app_foreground"
-            />
+            android:layout_gravity="center"
+            android:contentDescription="@string/txt_description_image_logo_app"
+            android:src="@mipmap/logo_app_foreground" />
 
         <TextView
-            android:layout_marginHorizontal="20dp"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/inter_bold"
-            android:text="Meu Tesouro Bank"
+            android:gravity="center"
+            android:text="@string/txt_my_treasury_bank"
             android:textColor="@color/text_color_default"
             android:textFontWeight="700"
             android:textSize="46sp" />
 
 
-
         <ProgressBar
-            android:layout_marginTop="32dp"
             android:id="@+id/progress_circular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:indeterminateTint="@color/text_color_default"
+            style="@style/ProgressCircularStyle"
+            android:layout_marginTop="32dp"
             />
     </LinearLayout>
-
-    
-
-
 
 
 </LinearLayout>
