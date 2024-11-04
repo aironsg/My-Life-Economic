@@ -45,7 +45,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_reset_password"
+        android:id="@+id/btn_check_email"
         style="@style/ButtonStyleSignIn"
         android:layout_gravity="center"
         android:text="Entrar no App" />
