@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_default"
+    android:orientation="vertical"
+    tools:context=".presenter.auth.login.LoginFragment">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/txt_button_create_account"
+        android:textColor="@color/text_color_default"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="415dp"
+        android:layout_height="180dp"
+        android:contentDescription="@string/txt_description_image_create_account"
+        android:src="@drawable/account_create_image" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_name"
+        style="@style/TextInputLayoutStyle"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_name"
+            style="@style/EditTextStyle"
+            android:hint="@string/hint_name"
+            android:inputType="textCapWords"
+            app:hintTextAppearance="@font/inter" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_email"
+        style="@style/TextInputLayoutStyle"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            style="@style/EditTextStyle"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_password"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/text_color_default">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            style="@style/EditTextStyle"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password_confirm"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_confirm_password"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
+        app:hintTextAppearance="@font/inter_semibold"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/text_color_default">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password_confirm"
+            style="@style/EditTextStyle"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_signUp"
+        style="@style/ButtonStyleSignIn"
+        android:layout_gravity="center"
+        android:text="@string/txt_button_create_account" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/txt_your_have_account" />
+
+        <TextView
+            android:id="@+id/btn_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/txt_button_send"
+            android:textColor="@color/text_color_default" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        style="@style/ProgressCircularStyle"
+        tools:visibility="visible"
+        android:layout_marginVertical="10dp" />
+
+</LinearLayout>

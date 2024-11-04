@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".presenter.splash.SplashFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/color_default"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/logo_app"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/txt_description_image_logo_app"
+            android:src="@mipmap/logo_app_foreground" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="@string/txt_my_treasury_bank"
+            android:textColor="@color/text_color_default"
+            android:textFontWeight="700"
+            android:textSize="46sp" />
+
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            style="@style/ProgressCircularStyle"
+            tools:visibility="visible"
+            android:layout_marginTop="32dp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

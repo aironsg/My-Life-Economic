@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_default">#EEF8F7</color>
+    <color name="text_color_default">#438883</color>
+    <color name="boxStrokeColor_error">#F2061E</color>
+
+<!--    gradient button-->
+    <color name="gradient_color_one">#69AEA9</color>
+    <color name="gradient_color_two">#69AEA9</color>
+    <color name="gradient_color_tree">#3F8782</color>
 </resources>
