@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding.*
 
-
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
@@ -31,11 +32,11 @@ class RegisterFragment : Fragment() {
 
     private fun initListener(){
         binding.btnCreateAccount.setOnClickListener {
-            ValidateData()
+            validateData()
         }
     }
 
-    private fun ValidateData(){
+    private fun validateData(){
         val name = binding.edtName.text.toString().trim()
         val email = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString().trim()

@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.databinding.FragmentLoginBinding
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     final var _binding: FragmentLoginBinding? = null
