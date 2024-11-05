@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentLoginBinding
 
 @AndroidEntryPoint
@@ -32,6 +34,13 @@ class LoginFragment : Fragment() {
     private fun initListener(){
         binding.btnSignIn.setOnClickListener {
             validateData()
+        }
+        binding.btnForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_resetAccountFragment)
+        }
+
+        binding.btnCreateAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 

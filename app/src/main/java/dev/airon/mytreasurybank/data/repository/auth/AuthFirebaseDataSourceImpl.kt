@@ -3,9 +3,11 @@ package dev.airon.mytreasurybank.data.repository.auth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import dev.airon.mytreasurybank.data.model.User
+import javax.inject.Inject
 import kotlin.coroutines.suspendCoroutine
 
-class AuthFirebaseDataSourceImpl(
+class AuthFirebaseDataSourceImpl @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : AuthFirebaseDataSource {
 
@@ -28,20 +30,13 @@ class AuthFirebaseDataSourceImpl(
     }
 
     override suspend fun register(
-        name: String,
-        email: String,
-        password: String,
-        confirmPassword: String
-    ): FirebaseUser {
+        user: User
+    ): User {
         return suspendCoroutine { continuation ->
-            firebaseAuth.createUserWithEmailAndPassword(email, password)
+            firebaseAuth.createUserWithEmailAndPassword(user.email, user.password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        val user = task.result.user
-                        user?.let {
-                            continuation.resumeWith(Result.success(it))
-                        }
-
+                        continuation.resumeWith(Result.success(user))
                     } else {
                         task.exception?.let {
                             continuation.resumeWith(Result.failure(it))
@@ -57,15 +52,15 @@ class AuthFirebaseDataSourceImpl(
 
             firebaseAuth.sendPasswordResetEmail(email)
                 .addOnCompleteListener { task ->
-                    if (task.isSuccessful){
+                    if (task.isSuccessful) {
                         continuation.resumeWith(Result.success(Unit))
-                    }else{
+                    } else {
                         task.exception?.let {
                             continuation.resumeWith(Result.failure(it))
 
+                        }
                     }
                 }
-        }
         }
 
     }

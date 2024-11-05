@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_gravity="center"
+            android:layout_marginTop="50dp"
             android:contentDescription="@string/txt_description_image_logo_app"
             android:src="@mipmap/logo_app_foreground" />
 

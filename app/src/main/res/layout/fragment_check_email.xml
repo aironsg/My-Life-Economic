@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/color_default"
     android:orientation="vertical"
-    tools:context=".presenter.auth.login.LoginFragment">
+    tools:context=".presenter.auth.recover.CheckEmailFragment">
 
 
     <TextView

@@ -32,14 +32,11 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
         style="@style/TextInputLayoutStyle"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold">
+        android:hint="@string/hint_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
-            android:hint="@string/hint_email"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,9 +44,6 @@
         android:id="@+id/input_password"
         style="@style/TextInputLayoutStyle"
         android:hint="@string/hint_password"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/text_color_default">
 
@@ -101,8 +95,7 @@
     <ProgressBar
         android:id="@+id/progress_circular"
         style="@style/ProgressCircularStyle"
-        tools:visibility="visible"
         android:layout_marginVertical="10dp"
-        />
+        tools:visibility="visible" />
 
 </LinearLayout>

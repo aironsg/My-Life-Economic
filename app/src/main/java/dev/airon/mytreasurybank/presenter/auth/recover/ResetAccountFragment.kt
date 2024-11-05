@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.databinding.FragmentResetAccountBinding
+import dev.airon.mytreasurybank.ui.initToolbar
+
 @AndroidEntryPoint
 class ResetAccountFragment : Fragment() {
 
@@ -24,10 +26,13 @@ class ResetAccountFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initToolbar(binding.toolbar)
         initListener()
     }
+
+
 
     private fun initListener(){
         binding.btnResetPassword.setOnClickListener {

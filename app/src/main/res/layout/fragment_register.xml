@@ -6,15 +6,24 @@
     android:layout_height="match_parent"
     android:background="@color/color_default"
     android:orientation="vertical"
-    tools:context=".presenter.auth.login.LoginFragment">
+    tools:context=".presenter.auth.register.RegisterFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="60dp"
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
         android:text="@string/txt_button_create_account"
@@ -24,7 +33,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    >
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,25 +43,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_name"
-        style="@style/TextInputLayoutStyle"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold">
+        style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_name"
             style="@style/EditTextStyle"
             android:hint="@string/hint_name"
-            android:inputType="textCapWords"
-            app:hintTextAppearance="@font/inter" />
+            android:inputType="textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
-        style="@style/TextInputLayoutStyle"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold">
+        style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
@@ -66,9 +67,6 @@
         android:id="@+id/input_password"
         style="@style/TextInputLayoutStyle"
         android:hint="@string/hint_password"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/text_color_default">
 
@@ -82,9 +80,6 @@
         android:id="@+id/input_password_confirm"
         style="@style/TextInputLayoutStyle"
         android:hint="@string/hint_confirm_password"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/text_color_default">
 
@@ -93,7 +88,6 @@
             style="@style/EditTextStyle"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signUp"
@@ -121,13 +115,11 @@
             android:layout_weight="1"
             android:text="@string/txt_button_send"
             android:textColor="@color/text_color_default" />
-
     </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progress_circular"
         style="@style/ProgressCircularStyle"
-        tools:visibility="visible"
-        android:layout_marginVertical="10dp" />
-
+        android:layout_marginVertical="10dp"
+        tools:visibility="visible" />
 </LinearLayout>

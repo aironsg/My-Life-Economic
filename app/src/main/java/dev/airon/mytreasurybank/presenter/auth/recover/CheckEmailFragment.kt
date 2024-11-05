@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentCheckEmailBinding
 
-
+@AndroidEntryPoint
 class CheckEmailFragment : Fragment() {
 
     private var _binding: FragmentCheckEmailBinding? = null
@@ -18,7 +19,7 @@ class CheckEmailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentCheckEmailBinding.inflate(inflater,container,false)
+        _binding = FragmentCheckEmailBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -41,7 +42,6 @@ class CheckEmailFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 
 
 }

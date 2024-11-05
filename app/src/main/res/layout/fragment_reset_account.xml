@@ -6,15 +6,24 @@
     android:layout_height="match_parent"
     android:background="@color/color_default"
     android:orientation="vertical"
-    tools:context=".presenter.auth.login.LoginFragment">
+    tools:context=".presenter.auth.recover.ResetAccountFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
-        android:layout_marginTop="66dp"
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
         android:text="@string/txt_reset_password"
@@ -47,10 +56,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
-        style="@style/TextInputLayoutStyle"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold">
+        style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
