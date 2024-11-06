@@ -49,6 +49,7 @@
             android:id="@+id/edt_name"
             style="@style/EditTextStyle"
             android:hint="@string/hint_name"
+            android:drawableStart="@drawable/ic_user_fill"
             android:inputType="textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,6 +61,7 @@
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
             android:hint="@string/hint_email"
+            android:drawableStart="@drawable/ic_mail_send_fill"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,6 +75,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_lock_password_fill"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,6 +89,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password_confirm"
             style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_lock_password_fill"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,6 +124,5 @@
     <ProgressBar
         android:id="@+id/progress_circular"
         style="@style/ProgressCircularStyle"
-        android:layout_marginVertical="10dp"
         tools:visibility="visible" />
 </LinearLayout>

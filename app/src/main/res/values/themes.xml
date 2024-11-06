@@ -26,6 +26,8 @@
         <item name="android:background">@drawable/edit_text</item>
         <item name="android:textColor">@color/text_color_default</item>
         <item name="android:fontFamily">@font/inter</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:drawableTint">@color/text_color_default</item>
     </style>
 
     <style name="HintTextStyle" parent="Theme.Material3.Light.NoActionBar">
@@ -38,15 +40,10 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginHorizontal">10dp</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="boxStrokeColor">@color/text_color_default</item>
         <item name="hintTextColor">@color/black</item>
-        <item name="boxBackgroundMode">outline</item>
+
         <item name="boxStrokeErrorColor">@color/boxStrokeColor_error</item>
         <item name="hintTextAppearance">@style/HintTextStyle</item>
-        <item name="android:textSize">16sp</item>
-        <item name="boxCollapsedPaddingTop">16dp</item>
-
-        <item name="android:outlineSpotShadowColor">@color/text_color_default</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
 
@@ -54,8 +51,10 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:visibility">gone</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_marginVertical">10dp</item>
         <item name="android:indeterminateTint">@color/text_color_default</item>
+
     </style>
 </resources>
 

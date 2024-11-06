@@ -21,4 +21,8 @@
     <string name="txt_message_information_link">Entre em seu Email e clique no link que enviamos para resetar sua senha</string>
     <string name="txt_send_link">Enviar Link</string>
     <string name="txt_no_have_account">Não tem uma conta?</string>
+    <string name="txt_verify_your_mail">Verifique seu Email</string>
+    <string name="txt_message_information_check_mail">Nós enviamos instruções para seu Email de como resetar sua senha. Caso não encontre procure na caixa de spam</string>
+    <string name="txt_button_check_mail">Entrar no App</string>
+    <string name="txt_description_image_check_mail">imagem de uma pessoa verificando o email</string>
 </resources>
