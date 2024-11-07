@@ -1,4 +1,4 @@
-package dev.airon.mytreasurybank.ui
+package dev.airon.mytreasurybank.util
 
 sealed class StateView<T>(val data: T? = null, val message: String? = null) {
     class Loading<T> : StateView<T>(data = null, message = null)

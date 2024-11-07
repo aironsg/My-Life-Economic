@@ -5,6 +5,7 @@
     <color name="color_default">#EEF8F7</color>
     <color name="text_color_default">#438883</color>
     <color name="boxStrokeColor_error">#F2061E</color>
+    <color name="txt_message_bottom_sheet">#438883</color>
 
 
 <!--    color card-->
@@ -21,4 +22,11 @@
     <color name="gradient_appBar__color_one">#69AEA9</color>
     <color name="gradient_appBar_color_two">#429690</color>
     <color name="gradient_appBar_color_tree">#2A7C76</color>
+
+<!--    SnackBar Colors-->
+    <color name="background_color_snackbar">#E4E4E4</color>
+    <color name="txt_color_snackbar">#0D0C0C</color>
+    <color name="button_confirm_color_snackbar">#438883</color>
+    <color name="button_cancel_color_snackbar">#F2061E</color>
+
 </resources>

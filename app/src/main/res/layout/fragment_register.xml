@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".presenter.auth.register.RegisterFragment">
 
+    <!--    botão de back-->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,9 +17,10 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!--    Titulo da View-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -41,6 +43,7 @@
         android:contentDescription="@string/txt_description_image_create_account"
         android:src="@drawable/account_create_image" />
 
+    <!--    Edittext Nome-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_name"
         style="@style/TextInputLayoutStyle">
@@ -48,11 +51,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_name"
             style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_user_line"
             android:hint="@string/hint_name"
-            android:drawableStart="@drawable/ic_user_fill"
             android:inputType="textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    Edittext E-mail-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
         style="@style/TextInputLayoutStyle">
@@ -60,11 +64,25 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_mail_line"
             android:hint="@string/hint_email"
-            android:drawableStart="@drawable/ic_mail_send_fill"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    Edittext Telefone-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password_confirm"
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_phone_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_phone_number"
+            style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_phone_line"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    Edittext Senha-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_password"
         style="@style/TextInputLayoutStyle"
@@ -75,30 +93,18 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_lock_password_fill"
+            android:drawableStart="@drawable/ic_lock_password_line"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_password_confirm"
-        style="@style/TextInputLayoutStyle"
-        android:hint="@string/hint_confirm_password"
-        app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/text_color_default">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_password_confirm"
-            style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_lock_password_fill"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+    <!--    Botão de Cadastro-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signUp"
         style="@style/ButtonStyleSignIn"
         android:layout_gravity="center"
         android:text="@string/txt_button_create_account" />
 
+    <!--    Entrar no app-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

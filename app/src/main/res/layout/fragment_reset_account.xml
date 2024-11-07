@@ -35,6 +35,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="415dp"
@@ -62,7 +64,7 @@
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
             android:hint="@string/hint_email"
-            android:drawableStart="@drawable/ic_mail_send_fill"
+            android:drawableStart="@drawable/ic_mail_line"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,5 +103,15 @@
         style="@style/ProgressCircularStyle"
         tools:visibility="visible"
         />
+
+    <ImageView
+        android:id="@+id/flying_mail_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_mail_send_fill"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:tint="@color/color_card"
+        tools:visibility="visible"/>
 
 </LinearLayout>

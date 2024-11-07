@@ -1,24 +1,23 @@
-package dev.airon.mytreasurybank.presenter.auth.register
+package dev.airon.mytreasurybank.presenter.auth.login
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.airon.mytreasurybank.data.model.User
-import dev.airon.mytreasurybank.domain.auth.RegisterUsecase
+import dev.airon.mytreasurybank.domain.auth.LoginUsecase
 import dev.airon.mytreasurybank.util.StateView
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
- class RegisterViewModel @Inject constructor(
-    private val registerUsecase: RegisterUsecase
-
+class LoginViewModel @Inject constructor(
+    private val loginUsecase: LoginUsecase
 ) : ViewModel() {
-    fun register(user: User) = liveData(Dispatchers.IO) {
+
+    fun login(email: String, password: String) = liveData(Dispatchers.IO) {
         try {
             emit(StateView.Loading())
-            registerUsecase.invoke(user)
-            emit(StateView.Success(user))
+            loginUsecase.invoke(email, password)
+            emit(StateView.Success(null))
 
         } catch (ex: Exception) {
             emit(StateView.Error(ex.message))

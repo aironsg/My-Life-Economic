@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentSplahBinding
 import dev.airon.mytreasurybank.presenter.auth.login.LoginFragment
+import dev.airon.mytreasurybank.util.FirebaseHelper
 
 @AndroidEntryPoint
 class SplashFragment : Fragment() {
@@ -24,19 +25,29 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSplahBinding.inflate(inflater,container,false)
+        _binding = FragmentSplahBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        getStarted()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Handler(Looper.getMainLooper()).postDelayed(
+            this::verifyAuth, 2000
+        )
     }
 
-    private fun getStarted(){
-        Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-        }, 2000)
+
+    private fun verifyAuth() {
+
+        if (FirebaseHelper.isAuthenticated()) {
+            binding.progressCircular.visibility = View.VISIBLE
+            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        } else {
+            binding.progressCircular.visibility = View.VISIBLE
+            findNavController().navigate(R.id.action_splashFragment_to_navigation)
+        }
+
+
     }
 
     override fun onDestroy() {

@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">My Treasury Bank</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    hints-->
     <string name="hint_password">Senha</string>
     <string name="hint_email">E-mail</string>
+    <string name="hint_phone_number">Telefone</string>
+    <string name="hint_name">Seu Nome</string>
+
+<!--    generics-->
     <string name="txt_button_forgot_password">Esqueceu a Senha?</string>
+    <string name="txt_button_bottomSheet_confirm">Confirmar</string>
+    <string name="txt_button_bottomSheet_ok">Entendi</string>
     <string name="txt_button_send">Entrar</string>
     <string name="txt_not_have_account">Não tem uma conta?</string>
     <string name="txt_button_create_account">Criar Conta</string>
@@ -12,9 +19,7 @@
     <string name="txt_description_image_welcome">Imagem de boas vindas</string>
     <string name="txt_my_treasury_bank">Meu Tesouro Bank</string>
     <string name="txt_description_image_logo_app">imagem da logo do app</string>
-    <string name="hint_confirm_password">Confirme sua Senha</string>
     <string name="txt_your_have_account">Já possui uma conta?</string>
-    <string name="hint_name">Seu Nome</string>
     <string name="txt_description_image_create_account">imagem de criação de conta</string>
     <string name="txt_reset_password">Resete sua senha</string>
     <string name="txt_description_image_reset_password">imagem de resetar a senha do usuario</string>
@@ -25,4 +30,19 @@
     <string name="txt_message_information_check_mail">Nós enviamos instruções para seu Email de como resetar sua senha. Caso não encontre procure na caixa de spam</string>
     <string name="txt_button_check_mail">Entrar no App</string>
     <string name="txt_description_image_check_mail">imagem de uma pessoa verificando o email</string>
+
+<!--    mensagens de aviso para o usuario-->
+    <string name="txt_email_is_empty">O campo de e-mail não pode estar vazio</string>
+    <string name="txt_password_is_empty">O campo de senha não pode estar vazio</string>
+    <string name="txt_confirm_password_is_empty">O campo confirmação de senha não pode estar vazio</string>
+    <string name="txt_name_is_empty">O campo de nome não pode estar vazio</string>
+    <string name="txt_email_invalid">O E-mail informado é inválido</string>
+    <string name="txt_password_incorrect">A Senha informada é incorreta</string>
+    <string name="txt_phone_number_is_empty">O campo de Telefone não pode estar vazio</string>
+    <string name="txt_password_security">Escolha uma senha mais forte, com pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais</string>
+
+<!--    firebase messages-->
+
+
+
 </resources>

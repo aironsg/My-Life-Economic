@@ -37,7 +37,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_mail_send_fill"
+            android:drawableStart="@drawable/ic_mail_line"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             style="@style/EditTextStyle"
-            android:drawableStart="@drawable/ic_lock_password_fill"
+            android:drawableStart="@drawable/ic_lock_password_line"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
