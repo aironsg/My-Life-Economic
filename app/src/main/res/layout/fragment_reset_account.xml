@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_default"
+    android:background="@color/background_default"
     android:orientation="vertical"
     tools:context=".presenter.auth.recover.ResetAccountFragment">
 
@@ -27,7 +27,7 @@
         android:fontFamily="@font/inter_bold"
         android:gravity="center"
         android:text="@string/txt_reset_password"
-        android:textColor="@color/text_color_default"
+        android:textColor="@color/color_default"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_button_create_account"
-            android:textColor="@color/text_color_default" />
+            android:textColor="@color/color_default" />
 
     </LinearLayout>
 

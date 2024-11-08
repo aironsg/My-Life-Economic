@@ -49,6 +49,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.cardview)
+    implementation(libs.material)
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -2,14 +2,20 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_default">#EEF8F7</color>
-    <color name="text_color_default">#438883</color>
+    <color name="background_default">#EEF8F7</color>
+    <color name="background_bottom_nav_bar">#F4F4F4</color>
+    <color name="color_default">#438883</color>
     <color name="boxStrokeColor_error">#F2061E</color>
     <color name="txt_message_bottom_sheet">#438883</color>
+    <color name="color_status_bar_home">#358882</color>
+    <color name="color_transaction_payment">#25A969</color>
+    <color name="color_transaction_pending">#F95B51</color>
+    <color name="color_transaction_date">#666666</color>
 
 
 <!--    color card-->
-    <color name="color_card">#29756F</color>
+    <color name="color_card">#2F7E79</color>
+    <color name="txt_color_card">#D0E5E4</color>
 
 
 
@@ -28,5 +34,8 @@
     <color name="txt_color_snackbar">#0D0C0C</color>
     <color name="button_confirm_color_snackbar">#438883</color>
     <color name="button_cancel_color_snackbar">#F2061E</color>
+
+
+
 
 </resources>

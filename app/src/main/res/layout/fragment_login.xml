@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_default"
+    android:background="@color/background_default"
     android:orientation="vertical"
     tools:context=".presenter.auth.login.LoginFragment"
     tools:ignore="ExtraText">
@@ -19,7 +19,7 @@
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:text="@string/txt_welcome"
-        android:textColor="@color/text_color_default"
+        android:textColor="@color/color_default"
         android:textSize="36sp" />
 
     <ImageView
@@ -46,7 +46,7 @@
         style="@style/TextInputLayoutStyle"
         android:hint="@string/hint_password"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/text_color_default">
+        app:passwordToggleTint="@color/color_default">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_button_create_account"
-            android:textColor="@color/text_color_default" />
+            android:textColor="@color/color_default" />
 
     </LinearLayout>
 
