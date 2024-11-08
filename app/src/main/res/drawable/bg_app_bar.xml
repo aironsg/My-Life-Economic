@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners
+        android:bottomRightRadius="50dp"
+        android:bottomLeftRadius="50dp"/>
+    <gradient
+        android:angle="270"
+        android:type="linear"
+        android:startColor="@color/gradient_appBar__color_one"
+        android:centerColor="@color/gradient_appBar_color_two"
+        android:endColor="@color/gradient_appBar_color_tree"/>
+
+</shape>

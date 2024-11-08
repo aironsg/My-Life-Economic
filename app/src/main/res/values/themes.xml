@@ -2,8 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyTreasuryBank" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/color_default</item>
+        <item name="colorPrimary">@color/background_default</item>
     </style>
+
+<!--    <style name="AppTheme.Home">-->
+<!--        <item name="android:statusBarColor">@color/color_default</item>-->
+<!--        <item name="android:navigationBarColor">@color/color_default</item>-->
+<!--    </style>-->
 
     <style name="Theme.MyTreasuryBank" parent="Base.Theme.MyTreasuryBank" />
 
@@ -20,12 +25,30 @@
         <item name="android:layout_marginVertical">10dp</item>
     </style>
 
+    <style name="ButtonBottomSheetStyle" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:background">@drawable/bg_button_bottom_sheet</item>
+        <item name="android:textColor">@color/color_default</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:layout_width">358dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:layout_marginVertical">10dp</item>
+    </style>
+
     <style name="EditTextStyle" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@drawable/edit_text</item>
         <item name="android:textColor">@color/color_default</item>
         <item name="android:fontFamily">@font/inter</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:drawableTint">@color/color_default</item>
+    </style>
+
+    <style name="HintTextStyle" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:textSize">16sp</item>
+
     </style>
 
     <style name="TextInputLayoutStyle" parent="Theme.Material3.Light.NoActionBar">
@@ -33,7 +56,10 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_marginHorizontal">10dp</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="android:outlineSpotShadowColor">@color/text_color_default</item>
+        <item name="hintTextColor">@color/black</item>
+
+        <item name="boxStrokeErrorColor">@color/boxStrokeColor_error</item>
+        <item name="hintTextAppearance">@style/HintTextStyle</item>
         <item name="android:textColorHint">@color/black</item>
     </style>
 
@@ -41,8 +67,57 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:visibility">gone</item>
-        <item name="android:indeterminateTint">@color/text_color_default</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_marginVertical">10dp</item>
+        <item name="android:indeterminateTint">@color/color_default</item>
+
     </style>
+
+    <!--    Style for Bottom Sheet-->
+    <style name="BottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="MyFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/color_default</item>
+        <!-- Definir o tamanho do botão -->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="tint">@color/white</item>
+        <!-- Remover o tamanho fixo do ícone -->
+        <item name="android:src">@drawable/ic_add_2</item>
+        <item name="android:gravity">center</item>
+        <item name="elevation">16dp</item>
+        <!-- Deixar o padding em 0 para que o ícone se ajuste automaticamente -->
+        <item name="contentPadding">0dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+
+    <style name="MyBottomNavigationViewTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="itemBackground">@drawable/transparent_background</item>
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationViewTextAppearanceInactive</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavigationViewTextAppearanceActive</item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearanceInactive" parent="TextAppearance.AppCompat">
+        <item name="android:drawablePadding">0dp</item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearanceActive" parent="TextAppearance.AppCompat">
+        <item name="android:drawablePadding">0dp</item>
+    </style>
+
 </resources>
 

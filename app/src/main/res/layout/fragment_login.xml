@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_default"
+    android:background="@color/background_default"
     android:orientation="vertical"
     tools:context=".presenter.auth.login.LoginFragment"
     tools:ignore="ExtraText">
@@ -19,7 +19,7 @@
         android:fontFamily="@font/inter_semibold"
         android:gravity="center"
         android:text="@string/txt_welcome"
-        android:textColor="@color/text_color_default"
+        android:textColor="@color/color_default"
         android:textSize="36sp" />
 
     <ImageView
@@ -32,14 +32,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
         style="@style/TextInputLayoutStyle"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold">
+        android:hint="@string/hint_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
-            android:hint="@string/hint_email"
+            android:drawableStart="@drawable/ic_mail_line"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,15 +45,13 @@
         android:id="@+id/input_password"
         style="@style/TextInputLayoutStyle"
         android:hint="@string/hint_password"
-        app:boxBackgroundMode="outline"
-        app:boxStrokeErrorColor="@color/boxStrokeColor_error"
-        app:hintTextAppearance="@font/inter_semibold"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/text_color_default">
+        app:passwordToggleTint="@color/color_default">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_password"
             style="@style/EditTextStyle"
+            android:drawableStart="@drawable/ic_lock_password_line"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,15 +90,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_button_create_account"
-            android:textColor="@color/text_color_default" />
+            android:textColor="@color/color_default" />
 
     </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progress_circular"
         style="@style/ProgressCircularStyle"
-        tools:visibility="visible"
-        android:layout_marginVertical="10dp"
-        />
+        tools:visibility="visible" />
 
 </LinearLayout>
