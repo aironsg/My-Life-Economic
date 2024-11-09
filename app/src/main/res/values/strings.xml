@@ -2,13 +2,13 @@
     <string name="app_name">My Treasury Bank</string>
     <!-- TODO: Remove or change this placeholder text -->
 
-<!--    hints-->
+    <!--    hints-->
     <string name="hint_password">Senha</string>
     <string name="hint_email">E-mail</string>
     <string name="hint_phone_number">Telefone</string>
     <string name="hint_name">Seu Nome</string>
 
-<!--    generics-->
+    <!--    generics-->
     <string name="txt_button_forgot_password">Esqueceu a Senha?</string>
     <string name="txt_button_bottomSheet_confirm">Confirmar</string>
     <string name="txt_button_bottomSheet_ok">Entendi</string>
@@ -31,7 +31,7 @@
     <string name="txt_button_check_mail">Entrar no App</string>
     <string name="txt_description_image_check_mail">imagem de uma pessoa verificando o email</string>
 
-<!--    mensagens de aviso para o usuario-->
+    <!--    mensagens de aviso para o usuario-->
     <string name="txt_email_is_empty">O campo de e-mail não pode estar vazio</string>
     <string name="txt_password_is_empty">O campo de senha não pode estar vazio</string>
     <string name="txt_confirm_password_is_empty">O campo confirmação de senha não pode estar vazio</string>
@@ -40,9 +40,10 @@
     <string name="txt_password_incorrect">A Senha informada é incorreta</string>
     <string name="txt_phone_number_is_empty">O campo de Telefone não pode estar vazio</string>
     <string name="txt_password_security">Escolha uma senha mais forte, com pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--    firebase messages-->
-
+    <!--    firebase messages-->
 
 
 </resources>
