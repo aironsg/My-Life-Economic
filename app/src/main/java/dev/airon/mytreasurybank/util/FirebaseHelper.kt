@@ -7,4 +7,6 @@ class FirebaseHelper {
     companion object{
         fun isAuthenticated() = FirebaseAuth.getInstance().currentUser  != null
     }
+
+
 }

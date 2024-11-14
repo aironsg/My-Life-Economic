@@ -112,6 +112,7 @@
         android:layout_gravity="center"
         android:visibility="invisible"
         app:tint="@color/color_card"
-        tools:visibility="visible"/>
+        tools:visibility="visible"
+        tools:ignore="ContentDescription" />
 
 </LinearLayout>

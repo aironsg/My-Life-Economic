@@ -2,6 +2,7 @@ package dev.airon.mytreasurybank.presenter.auth.register
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import dev.airon.mytreasurybank.data.model.User
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding.*
 import dev.airon.mytreasurybank.util.StateView
+import dev.airon.mytreasurybank.util.addPhoneMask
 import dev.airon.mytreasurybank.util.initToolbar
 import dev.airon.mytreasurybank.util.isEmailValid
 import dev.airon.mytreasurybank.util.isPasswordValid
@@ -38,7 +40,10 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar(binding.toolbar)
+        binding.edtPhoneNumber.addPhoneMask()
         initListener()
+
+
     }
 
     private fun initListener() {
@@ -46,6 +51,7 @@ class RegisterFragment : Fragment() {
         binding.btnSignUp.setOnClickListener {
 
             validateData()
+
         }
 
         binding.btnCreateAccount.setOnClickListener {
@@ -56,8 +62,10 @@ class RegisterFragment : Fragment() {
     private fun validateData() {
         val name = binding.edtName.text.toString().trim()
         val email = binding.edtEmail.text.toString().trim()
-        val password = binding.edtPassword.text.toString().trim()
-        val phoneNumber = binding.edtPhoneNumber.text.toString().trim()
+        val password =binding.edtPassword.text.toString().trim()
+
+        val phoneNumber = formatPhoneNumberForStorage(binding.edtPhoneNumber.text.toString().trim())
+        Log.i("INFOTESTE", "validateData: ${phoneNumber}")
 
         //validação nome
         if (name.isEmpty()) {
@@ -94,6 +102,11 @@ class RegisterFragment : Fragment() {
         val user = User(name = name, email = email,phoneNumber = phoneNumber , password = password)
         registerUser(user)
     }
+
+    private fun formatPhoneNumberForStorage(phone: String): String {
+        return phone.replace("[^\\d]".toRegex(), "")
+    }
+
 
     private fun registerUser(user: User) {
 

@@ -1,21 +1,16 @@
 package dev.airon.mytreasurybank.presenter.auth.recover
 
-import android.annotation.SuppressLint
-import android.graphics.Rect
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateInterpolator
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentResetAccountBinding
@@ -23,7 +18,6 @@ import dev.airon.mytreasurybank.util.StateView
 import dev.airon.mytreasurybank.util.initToolbar
 import dev.airon.mytreasurybank.util.isEmailValid
 import dev.airon.mytreasurybank.util.showBottomSheet
-import kotlin.text.contains
 
 @AndroidEntryPoint
 class ResetAccountFragment : Fragment() {
@@ -31,7 +25,6 @@ class ResetAccountFragment : Fragment() {
     private var _binding: FragmentResetAccountBinding? = null
     private val binding get() = _binding!!
     private val resetAccountViewModel: ResetAccountViewModel by viewModels()
-    //TODO: implementar logica que defina a mensagem para o usuario.
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +46,7 @@ class ResetAccountFragment : Fragment() {
             findNavController().navigate(R.id.action_resetAccountFragment_to_registerFragment)
         }
         binding.btnResetPassword.setOnClickListener {
-            ValidateData()
+            validateData()
 
         }
     }
@@ -81,19 +74,18 @@ class ResetAccountFragment : Fragment() {
     }
 
 
-    private fun ValidateData() {
+    private fun validateData() {
         val email = binding.edtEmail.text.toString().trim()
         if (email.isNotEmpty()) {
             if (isEmailValid(email)) {
 
                 resetAccount(email)
             } else {
-                Toast.makeText(requireContext(), "O e-mail digitado é inválido", Toast.LENGTH_SHORT)
-                    .show()
+                showBottomSheet(getString(R.string.txt_email_invalid))
 
             }
         } else {
-            Toast.makeText(requireContext(), "preencha seu e-mail", Toast.LENGTH_SHORT).show()
+            showBottomSheet(getString(R.string.txt_email_is_empty))
         }
     }
 
@@ -108,12 +100,12 @@ class ResetAccountFragment : Fragment() {
                     binding.progressCircular.visibility = View.INVISIBLE
                     showBottomSheet("Você está prestes a enviar um E-mail para : $email ",
                         titleButton = R.string.txt_button_bottomSheet_confirm,
-                        onClick ={
+                        onClick = {
                             sendMail(email)
                             Handler(Looper.getMainLooper()).postDelayed({
                                 findNavController().navigate(R.id.action_resetAccountFragment_to_checkEmailFragment)
                             }, 3000)
-                        } )
+                        })
                 }
 
                 is StateView.Error -> {
@@ -125,10 +117,9 @@ class ResetAccountFragment : Fragment() {
     }
 
 
-
-        override fun onDestroy() {
-            super.onDestroy()
-            _binding = null
-        }
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
+
+}

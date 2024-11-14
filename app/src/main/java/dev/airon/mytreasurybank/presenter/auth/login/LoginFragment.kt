@@ -1,6 +1,7 @@
 package dev.airon.mytreasurybank.presenter.auth.login
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentLoginBinding
 import dev.airon.mytreasurybank.util.StateView
 import dev.airon.mytreasurybank.util.isEmailValid
+import dev.airon.mytreasurybank.util.showBottomSheet
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -57,20 +59,13 @@ class LoginFragment : Fragment() {
                 if (password.isNotEmpty()) {
                    loginUser(email, password)
                 } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "campo de senha não pode estar vazio",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    showBottomSheet(getString(R.string.txt_password_is_empty))
                 }
             } else {
-                Toast.makeText(requireContext(), "seu email não é válido", Toast.LENGTH_SHORT)
-                    .show()
-
+                showBottomSheet(getString(R.string.txt_email_invalid))
             }
-
         } else {
-            Toast.makeText(requireContext(), "preencha seu e-mail", Toast.LENGTH_SHORT).show()
+            showBottomSheet(getString(R.string.txt_email_is_empty))
         }
     }
 
@@ -88,6 +83,7 @@ class LoginFragment : Fragment() {
 
                 is StateView.Error -> {
                     binding.progressCircular.visibility = View.INVISIBLE
+                    Log.i("INFOTEST", "loginUser: ")
                     Toast.makeText(requireContext(),stateView.message,Toast.LENGTH_SHORT).show()
                 }
 

@@ -7,9 +7,12 @@ import android.graphics.Color
 import android.graphics.Rect
 import android.os.Handler
 import android.os.Looper
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -51,42 +54,54 @@ fun Fragment.showBottomSheet(
         CustomBottomSheetBinding.inflate(layoutInflater, null, false)
 
     bottomSheetBinding.message.text = message
-    bottomSheetBinding.btnOk.text = getString(titleButton?: R.string.txt_button_bottomSheet_ok)
-    bottomSheetBinding.btnOk.setOnClickListener { onClick()
-    bottomSheetDialog.dismiss()}
+    bottomSheetBinding.btnOk.text = getString(titleButton ?: R.string.txt_button_bottomSheet_ok)
+    bottomSheetBinding.btnOk.setOnClickListener {
+        onClick()
+        bottomSheetDialog.dismiss()
+    }
     bottomSheetDialog.setContentView(bottomSheetBinding.root)
     bottomSheetDialog.show()
 
 
 }
 
-//@SuppressLint("ClickableViewAccessibility")
-//private fun showSnackBar(email: String) {
-//    val snackbar = Snackbar.make(binding.root, "Você está prestes a enviar um E-mail para : $email ", Snackbar.LENGTH_INDEFINITE)
-//        .setAction("Confirmar") {
-//            sendMail(email)
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                findNavController().navigate(R.id.action_resetAccountFragment_to_checkEmailFragment)
-//            }, 3000)
-//        }.setTextColor(ContextCompat.getColor(requireContext(), R.color.txt_color_snackbar))
-//        .setActionTextColor(ContextCompat.getColor(requireContext(), R.color.button_confirm_color_snackbar))
-//        .setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.background_color_snackbar))
-//
-//    snackbar.show()
-//
-//    binding.root.setOnTouchListener { _, event ->
-//        if (event.action == MotionEvent.ACTION_DOWN) {
-//            val snackbarView = snackbar.view
-//            val rect = Rect()
-//            snackbarView.getGlobalVisibleRect(rect)
-//
-//            if (!rect.contains(event.rawX.toInt(), event.rawY.toInt())) {
-//                snackbar.dismiss()
-//                binding.root.setOnTouchListener(null)
-//            }
-//        }
-//        false
-//    }
-//}
+
+// Extension function para aplicar a máscara de telefone
+fun EditText.addPhoneMask() {
+    this.addTextChangedListener(object : TextWatcher {
+        private var isUpdating = false
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (isUpdating) return
+            isUpdating = true
+
+            // Remove caracteres especiais
+            var phone = s.toString().replace("[^\\d]".toRegex(), "")
+
+            // Aplica a máscara: (##) #####-####
+            if (phone.length > 11) phone = phone.substring(0, 11)
+            val formatted = when (phone.length) {
+                in 1..2 -> "($phone"
+                in 3..7 -> "(${phone.substring(0, 2)}) ${phone.substring(2)}"
+                in 8..11 -> "(${phone.substring(0, 2)}) ${
+                    phone.substring(
+                        2,
+                        7
+                    )
+                }-${phone.substring(7)}"
+
+                else -> phone
+            }
+
+            setText(formatted)
+            setSelection(formatted.length)
+            isUpdating = false
+        }
+
+        override fun afterTextChanged(s: Editable?) {}
+    })
+}
 
 
