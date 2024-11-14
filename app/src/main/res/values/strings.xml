@@ -3,12 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <!--    hints-->
-    <string name="hint_password">Senha</string>
-    <string name="hint_email">E-mail</string>
-    <string name="hint_phone_number">Telefone</string>
-    <string name="hint_name">Seu Nome</string>
+    <string name="hint_password">SENHA</string>
+    <string name="hint_email">E-MAIL</string>
+    <string name="hint_phone_number">TELEFONE</string>
+    <string name="hint_name">SEU NOME</string>
 
-<!--    description images-->
+    <!--    description images-->
     <string name="txt_description_image_create_account">imagem de criação de conta</string>
     <string name="txt_description_image_reset_password">imagem de resetar a senha do usuario</string>
     <string name="txt_description_image_check_mail">imagem de uma pessoa verificando o email</string>
@@ -32,6 +32,7 @@
     <string name="txt_verify_your_mail">Verifique seu Email</string>
     <string name="txt_message_information_check_mail">Nós enviamos instruções para seu Email de como resetar sua senha. Caso não encontre procure na caixa de spam</string>
     <string name="txt_button_check_mail">Entrar no App</string>
+    <string name="txt_error_unknow">Desculpe, erro não reconhecido</string>
 
     <!--    mensagens de aviso para o usuario-->
     <string name="txt_email_is_empty">O campo de e-mail não pode estar vazio</string>
@@ -51,7 +52,6 @@
     <string name="invalid_password">Senha inválida, tente novamente</string>
     <string name="email_in_use">Este e-mail já esta em uso</string>
     <string name="strong_password">A senha deve conter pelo menos 6 caracteres</string>
-
 
 
 </resources>

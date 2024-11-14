@@ -48,27 +48,31 @@
     <!--    Edittext Nome-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_name"
-        style="@style/TextInputLayoutStyle">
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/hint_name"
+        android:inputType="textCapSentences"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_name"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_user_line"
-            android:hint="@string/hint_name"
-            android:inputType="textCapWords" />
+            tools:text="fulano de tal" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Edittext E-mail-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
+            android:hint="@string/hint_email"
         style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_mail_line"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            tools:text="email@teste.com"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Edittext Telefone-->
@@ -81,7 +85,8 @@
             android:id="@+id/edt_phone_number"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_phone_line"
-            android:inputType="phone" />
+            android:inputType="phone"
+            tools:text="(xx) xxxxx-xxxx"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Edittext Senha-->
@@ -96,7 +101,8 @@
             android:id="@+id/edt_password"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_lock_password_line"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            tools:text="senha123"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    Botão de Cadastro-->

@@ -58,12 +58,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
+            android:hint="@string/hint_email"
         style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
-            android:hint="@string/hint_email"
             android:drawableStart="@drawable/ic_mail_line"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>

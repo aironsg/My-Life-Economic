@@ -31,14 +31,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_email"
-        style="@style/TextInputLayoutStyle"
-        android:hint="@string/hint_email">
+        android:hint="@string/hint_email"
+        style="@style/TextInputLayoutStyle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_email"
             style="@style/EditTextStyle"
             android:drawableStart="@drawable/ic_mail_line"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            tools:text="email@teste.com"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

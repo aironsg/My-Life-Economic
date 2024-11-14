@@ -15,6 +15,7 @@ import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.data.model.User
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding
 import dev.airon.mytreasurybank.databinding.FragmentRegisterBinding.*
+import dev.airon.mytreasurybank.util.FirebaseHelper
 import dev.airon.mytreasurybank.util.StateView
 import dev.airon.mytreasurybank.util.addPhoneMask
 import dev.airon.mytreasurybank.util.initToolbar
@@ -62,10 +63,9 @@ class RegisterFragment : Fragment() {
     private fun validateData() {
         val name = binding.edtName.text.toString().trim()
         val email = binding.edtEmail.text.toString().trim()
-        val password =binding.edtPassword.text.toString().trim()
-
+        val password = binding.edtPassword.text.toString().trim()
         val phoneNumber = formatPhoneNumberForStorage(binding.edtPhoneNumber.text.toString().trim())
-        Log.i("INFOTESTE", "validateData: ${phoneNumber}")
+
 
         //validação nome
         if (name.isEmpty()) {
@@ -76,12 +76,13 @@ class RegisterFragment : Fragment() {
         //validação email
         if (email.isEmpty()) {
             showBottomSheet(getString(R.string.txt_email_is_empty))
-            if (!isEmailValid(email)) {
-                showBottomSheet(getString(R.string.txt_email_invalid))
-                return
-            }
             return
         }
+        if (!isEmailValid(email)) {
+            showBottomSheet(getString(R.string.txt_email_invalid))
+            return
+        }
+
         //validação de telefone
         if (phoneNumber.isEmpty()) {
             showBottomSheet(getString(R.string.txt_phone_number_is_empty))
@@ -91,15 +92,15 @@ class RegisterFragment : Fragment() {
         //validação senha
         if (password.isEmpty()) {
             showBottomSheet(getString(R.string.txt_password_is_empty))
-            if (!isPasswordValid(password)) {
-                showBottomSheet(getString(R.string.txt_password_security))
-                return
-            }
+            return
+        }
+        if (!isPasswordValid(password)) {
+            showBottomSheet(getString(R.string.txt_password_security))
             return
         }
 
 
-        val user = User(name = name, email = email,phoneNumber = phoneNumber , password = password)
+        val user = User(name = name, email = email, phoneNumber = phoneNumber, password = password)
         registerUser(user)
     }
 
@@ -133,12 +134,7 @@ class RegisterFragment : Fragment() {
 
                 is StateView.Error -> {
                     binding.progressCircular.visibility = View.INVISIBLE
-                    Toast.makeText(
-                        requireContext(),
-                        stateView.message,
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
+                    showBottomSheet(getString(FirebaseHelper.validError(stateView.message ?: "")))
 
                 }
             }

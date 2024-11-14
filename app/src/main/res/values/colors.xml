@@ -11,6 +11,12 @@
     <color name="color_transaction_payment">#25A969</color>
     <color name="color_transaction_pending">#F95B51</color>
     <color name="color_transaction_date">#666666</color>
+    <color name="color_edit_new_transaction">#666666</color>
+    <color name="color_text_button_selected">#666666</color>
+    <color name="color_icons_profile">#666666</color>
+    <color name="color_selected">@android:color/transparent</color>
+    <color name="color_unselected">#EEF8F7</color>
+    <color name="color_text_email_profile">#438883</color>
 
 
 <!--    color card-->

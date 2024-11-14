@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.FragmentLoginBinding
+import dev.airon.mytreasurybank.util.FirebaseHelper
 import dev.airon.mytreasurybank.util.StateView
 import dev.airon.mytreasurybank.util.isEmailValid
 import dev.airon.mytreasurybank.util.showBottomSheet
@@ -83,8 +84,8 @@ class LoginFragment : Fragment() {
 
                 is StateView.Error -> {
                     binding.progressCircular.visibility = View.INVISIBLE
-                    Log.i("INFOTEST", "loginUser: ")
-                    Toast.makeText(requireContext(),stateView.message,Toast.LENGTH_SHORT).show()
+                    showBottomSheet(getString(FirebaseHelper.validError(stateView.message ?: "")))
+
                 }
 
             }

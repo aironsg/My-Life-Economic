@@ -6,6 +6,7 @@
         android:type="linear"
         android:angle="@integer/material_motion_duration_long_1"
         android:endColor="@color/gradient_color_tree"
+        android:centerColor="@color/gradient_color_two"
         android:startColor="@color/gradient_color_one" />
 
 </shape>
