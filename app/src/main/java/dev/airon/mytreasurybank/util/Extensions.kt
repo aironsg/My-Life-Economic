@@ -4,6 +4,8 @@ package dev.airon.mytreasurybank.util
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.graphics.Rect
 import android.os.Handler
 import android.os.Looper
@@ -23,11 +25,16 @@ import com.google.android.material.snackbar.Snackbar
 import dev.airon.mytreasurybank.R
 import dev.airon.mytreasurybank.databinding.CustomBottomSheetBinding
 
-fun Fragment.initToolbar(toolbar: Toolbar, homeAsUpEnabled: Boolean = true) {
+fun Fragment.initToolbar(toolbar: Toolbar, homeAsUpEnabled: Boolean = true, iconColor: Int? = null) {
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
     (activity as AppCompatActivity).title = ""
     (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_left_s_line)
     (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(homeAsUpEnabled)
+    if(iconColor !=  null){
+        val drawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_arrow_left_s_line)
+        drawable?.setColorFilter(iconColor, PorterDuff.Mode.SRC_ATOP)
+        (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(drawable)
+    }
     toolbar.setNavigationOnClickListener {
         activity?.onBackPressed()
     }

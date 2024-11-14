@@ -40,7 +40,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initToolbar(binding.toolbar)
+        initToolbar(binding.toolbar, iconColor = R.color.color_default)
         binding.edtPhoneNumber.addPhoneMask()
         initListener()
 

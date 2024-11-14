@@ -12,9 +12,9 @@
         android:title="Gráfico" />
 
     <item
-        android:id="@+id/navigation_transaction"
+        android:id="@+id/navigation_wallet"
         android:icon="@drawable/transaction_selector"
-        android:title="Transações" />
+        android:title="Carteira" />
 
     <item
         android:id="@+id/navigation_profile"

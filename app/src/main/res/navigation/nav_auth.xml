@@ -26,7 +26,11 @@
         android:id="@+id/homeFragment"
         android:name="dev.airon.mytreasurybank.presenter.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
     <navigation android:id="@+id/authentication"
         app:startDestination="@id/loginFragment">
         <fragment
@@ -89,4 +93,9 @@
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true"/>
     </navigation>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="dev.airon.mytreasurybank.presenter.transaction.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" />
 </navigation>
